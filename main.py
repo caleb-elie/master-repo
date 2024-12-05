@@ -1,13 +1,10 @@
-user = input("Enter a number: ")
-total = 0
-
-if not user.isdigit():
-    print("Please enter a valid number.")
-else:
-    try:
-        for digit in user:
-            total += int(digit)
-        print("The sum of digits is ", total)
-    except Exception as e:
-        print("An error occurred")
+def is_palindrome(phrase):
+    cleaned_phrase = ''.join(char.lower() for char in phrase if char.isalnum())
     
+    if cleaned_phrase == cleaned_phrase[::-1]:
+        print(f"'{phrase}' is a palindrome")
+    else:
+        print(f"'{phrase}' is not a palindrome")
+
+word = input("Enter a phrase or word: ")
+is_palindrome(word)
